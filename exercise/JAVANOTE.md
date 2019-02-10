@@ -11,11 +11,12 @@
  - `/* */` or `//`
 2. Declarion:
  - Array:
-   `int [] arr; //declare
+   ```
+	int [] arr; //declare
 	 arr = new int [3] // allocate size 
 	 arr[0] = 5, arr[1] = 8, arr[2] = 7 //fill
 	 int [] arr2 = { 5, 8, 7 } // all in one 
-	`
+	```
 ### Encapsulation 
 
 1. Access Level
@@ -61,24 +62,26 @@
 
 1. Object is a structure accessed via a ponter
  Ex.1 :
- 
- #### 
+  ```
    Counter c1 = new Counter ();
 	Counter c2 = c1;
 	if (c1 == c2 ).....  // True
 	c1.tick();  // c2 also changes
+  ```
 
- ####
+  ```
    Counter c1 = new Counter ();
 	Counter c2 = new Counter ();
 	if (c1 == c2 ).....  // false
-
+  ```
   Ex.2 :
-  `
+  
+  ```
    String s = "";
 	if (s == " ")... // False! (probably!)
 	if (s.equals (""))...// True
-  `
+  ```
+
 ### Privitive Types
 
 1. byte, short, int, long, float, double, boolean, char 
