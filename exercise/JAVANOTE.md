@@ -60,20 +60,19 @@
 ### Equatity
 
 1. Object is a structure accessed via a ponter
- 
  Ex.1 :
-  `
+ 
+ #### 
    Counter c1 = new Counter ();
 	Counter c2 = c1;
 	if (c1 == c2 ).....  // True
 	c1.tick();  // c2 also changes
-  `
 
-  `
+ ####
    Counter c1 = new Counter ();
 	Counter c2 = new Counter ();
 	if (c1 == c2 ).....  // false
-  `
+
   Ex.2 :
   `
    String s = "";
