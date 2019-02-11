@@ -85,3 +85,20 @@
 ### Privitive Types
 
 1. byte, short, int, long, float, double, boolean, char 
+
+### Cohesion and Decoupling
+ - grouping right thing together
+
+
+### Grouping
+ 
+ - Three classes for the first prototype
+
+### Evaluation
+ - Setting up
+ - Operating
+ - Shutting down
+
+
+
+
