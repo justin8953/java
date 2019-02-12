@@ -100,5 +100,9 @@
  - Shutting down
 
 
+### Reversal
 
+### Grid and Entity
+
+## Play and State
 

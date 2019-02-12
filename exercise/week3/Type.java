@@ -1,5 +1,4 @@
-/* Define constants for different types of triangle. */
-
+/* Define constants for different choice to draw on the board. */
 enum Type {
-	BLANK, O, X ;
+	ILEGAL,BLANK, O, X ;
 }
