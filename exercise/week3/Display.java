@@ -1,13 +1,13 @@
 import java.util.Arrays;
 import java.io.*;
 import java.util.Scanner;
-
-
 import java.util.Random;
+
+
 class Display {
 
   private Scanner input = new Scanner(System.in);
-
+  // Get human's input for the board 
   int [] read_input()
   {
     int [] movement = new int[2];
@@ -17,6 +17,17 @@ class Display {
     movement[1]=get_input_position();
     return movement;
   }
+  private int get_input_position()
+  {
+    int position;
+    position = input.nextInt();
+    while(position>2 || position<0){
+      position = input.nextInt();
+    }
+    return position;
+  }
+
+  // Get computer's input for the board 
   int [] random_input()
   {
     Random rand = new Random(System.currentTimeMillis());
@@ -26,15 +37,6 @@ class Display {
     return movement;
   }
  
-  int get_input_position()
-  {
-    int position;
-    position = input.nextInt();
-    while(position>2 || position<0){
-      position = input.nextInt();
-    }
-    return position;
-  }
   void print_board(Type [][] board )
   {
     for(int i = 0 ; i< 3 ; i++)
@@ -48,7 +50,9 @@ class Display {
     }
     System.out.println("");
   }
-  String Type_to_String(Type type)
+
+  // Convert type to string
+  private String Type_to_String(Type type)
   {
     if(type==Type.O){return "O ";}
     else if (type == Type.X){return "X ";}
@@ -68,6 +72,8 @@ class Display {
     TestReadInput();
     TestTypeToString();
   }
+
+  // Show the board on screen
   private void TestDisplayBoard(){
     Type [][] board = {{Type.O,Type.O,Type.X},
                        {Type.O,Type.O,Type.BLANK},
@@ -75,12 +81,16 @@ class Display {
                       };
     print_board(board);
   }
+
+  // Test user input
   private void TestReadInput(){
     int [] movement;
     movement = read_input();
-    System.out.println("X position is"+movement[0]);
-    System.out.println("Y position is"+movement[1]);
+    System.out.println("X position is "+movement[0]);
+    System.out.println("Y position is "+movement[1]);
   }
+  
+  // Test computer input
   private void TestRandomInput(){
     int [] movement;
     movement = random_input();
@@ -89,6 +99,8 @@ class Display {
     movement = random_input();
 
   }
+
+  // Test convert enumerate type to string
   private void TestTypeToString(){
     assert(Type_to_String(Type.O).equals("O "));
     assert(Type_to_String(Type.X).equals("X "));

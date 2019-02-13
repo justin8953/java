@@ -1,7 +1,11 @@
 import java.util.Arrays; 
 
 class Board {
+  
+  // 3 * 3 board
   private Type [][] board = new Type [3][3];
+  
+  // Initialise the board to blank
   Board() 
   {
     for (int i = 0 ; i < 3 ; i ++)
@@ -12,6 +16,8 @@ class Board {
       }
     }
   }
+  Type [][] get_board(){return board;}
+  // Get the game result or Keep the game by return NONE
   Result game_result(Type any)
   {
     if(col_has_three(any, 1, 0) || col_has_three(any, 1, 1)||col_has_three(any, 1, 2)){return Result.WIN;}
@@ -20,6 +26,8 @@ class Board {
     else if (!board_is_filled()){return Result.DRAW;}
     return Result.NONE;
   } 
+
+  
   boolean board_is_filled()
   {
     boolean filled = false;
@@ -32,32 +40,35 @@ class Board {
     }
     return filled;
   }
-  boolean col_has_three(Type any, int row,int col)
+  private boolean col_has_three(Type any, int row,int col)
   {
     if( board[row-1][col] == any &&  board[row][col]==any && board[row+1][col]==any){return true;}
     return false;
   }
-  boolean row_has_three(Type any, int row,int col)
+  private boolean row_has_three(Type any, int row,int col)
   {
     if(board[row][col-1] == any && board[row][col]==any && board[row][col+1]==any){return true;}
     return false;
   }
-  boolean cross_has_three(Type any, int row,int col)
+  private boolean cross_has_three(Type any, int row,int col)
   {
     if(board[row-1][col-1] == any && board[row][col]==any && board[row+1][col+1]==any){return true;}
     else if (board[row-1][col+1] == any && board[row][col]==any && board[row+1][col-1]==any){return true;}
     return false;
   }
+  // Check the cell is empty
   boolean move_isvalid (int row, int col)
   {
     if (board[row][col]==Type.BLANK){return true;}
     return false;
-  } 
+  }
+  // Draw the circle or cross
   void move (Type draw, int row, int col)
   {
     board[row][col] = draw;
   }
-  Type [][] get_board(){return board;}
+
+  
 
   // ---------- Testing -----------
 
@@ -77,6 +88,8 @@ class Board {
     TestBoardFilled();
     System.out.println("All Pass...");
   }
+
+  // Test the result
   private void TestResult()
   {
     move(Type.O,0,0);
@@ -100,6 +113,8 @@ class Board {
     move(Type.X,2,2);
     assert(game_result(Type.O)==Result.DRAW);
   }
+
+  // Test Row has three Os or Xs
   private void TestRowResult(){
     move(Type.O,0,0);
     move(Type.O,0,1);
@@ -114,6 +129,8 @@ class Board {
     move(Type.O,2,2);
     assert(row_has_three(Type.O, 2, 1)==true);
   }
+
+  // Test Cross has three Os or Xs
   private void TestCrossResult(){
     move(Type.O,0,0);
     move(Type.O,1,1);
@@ -124,7 +141,7 @@ class Board {
     move(Type.O,2,0);
     assert(cross_has_three(Type.O, 1, 1)==true);
   }
-  // Testing Win or draw
+  // Test Col has three Os or Xs
   private void TestColResult()
   {
     move(Type.O,0,0);
@@ -153,6 +170,7 @@ class Board {
       }
     }
   }
+
   // Testing drawing board is valid or not
   private void TestMoveValid ()
   {
@@ -160,6 +178,8 @@ class Board {
     move(Type.O, 1, 1);
     assert(move_isvalid(1,1)==false);
   } 
+
+  // Test Board is filled
   private void TestBoardFilled()
   {
     for (int i=0;i<3;i++)
