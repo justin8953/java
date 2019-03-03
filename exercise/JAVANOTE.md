@@ -9,7 +9,7 @@
 
 1. Comment Using: 
  - `/* */` or `//`
-2. Declarion:
+2. Declaration:
  - Array:
    ```
 	 int [] arr; //declare
@@ -58,7 +58,7 @@
 
 1. It's good for the `main class` to be tiny.
 
-### Equatity
+### Equality
 
 1. Object is a structure accessed via a ponter
  Ex.1 :
@@ -82,27 +82,37 @@
 	if (s.equals (""))...// True
   ```
 
-### Privitive Types
+### Primitive Types V.S Reference Types
+- Primitive
+	- byte, short, int, long, float, double, boolean, char 
+- Reference
+	- `Dog myDog = new Dog()`
 
-1. byte, short, int, long, float, double, boolean, char 
+### Garbage Collection (Heap)
+### Pass-by-Copy
+### Instance and Local 
 
-### Cohesion and Decoupling
- - grouping right thing together
+### Generality 
+- List<Item> xs = new List<Item>();
+- `@SuppressWarnings("unchecked")`
 
+### Inheritance
 
-### Grouping
- 
- - Three classes for the first prototype
-
-### Evaluation
- - Setting up
- - Operating
- - Shutting down
-
-
-### Reversal
-
-### Grid and Entity
-
-## Play and State
+-  Object class
+- Direct Inheritance
+- Parent/base class
+	- Overloading
+  	 Java can sort out by context and handle method with the same of arguments
+- subclass
+	- super()
+	- override()
+	- ex
+	```
+		public class Doctor {
+			...
+		}
+		public class Family Doctor extend Doctor{
+			...
+		}	
+	```
 
