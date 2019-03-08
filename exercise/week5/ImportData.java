@@ -4,7 +4,7 @@ import java.util.ArrayList;
 class ImportData {
    Scanner input;
    final ArrayList<Record> data = new ArrayList<Record>();
-   void ReadFile(String name){
+   ImportData(String name){
       try{
          File file = new File(name);
          input = new Scanner(file);
@@ -19,13 +19,19 @@ class ImportData {
          e.printStackTrace();
       }
    }
+   /**
+    * @return the data
+    */
+   public ArrayList<Record> getData() {
+      return data;
+   }
    
    public static void main(String[] args) {
-      ImportData program = new ImportData();
-      program.run();
+      // ImportData program = new ImportData();
+      // program.run();
    }
    private void run (){
-      ReadFile("data.txt");
+      // ReadFile("data.txt");
    }
 
 

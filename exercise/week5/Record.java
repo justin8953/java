@@ -5,6 +5,7 @@ class Record {
    Record(String... names) {
       for (String e : names) records.add(e);
    }
+
    /**
     * @return the records
     */
