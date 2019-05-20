@@ -1,2 +1,2 @@
-id, name, addres
-1, justin, taipei
+id(INT), name(STR), score(FLOAT)
+1, justin, 1.0

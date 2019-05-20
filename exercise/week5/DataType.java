@@ -1,25 +1,19 @@
+// Give data a type 
 class DataType {
    private String data; 
-   private ArrayList<Type> type; 
+   private Type dtype; 
 
-   DataType (String name, Type... types)
+   DataType (String name, Type type)
    {
       this.data = name;
-      for(Type e: types){type.add(e);}
+      this.dtype = type;
    }
-   
    String getdata()
    {
       return this.data;
    }
-   /**
-    * @return the type
-    */
-   public ArrayList<Type> getType() {
-      return this.type;
+   Type getType() {
+      return this.dtype;
    }
 
-
-
-   
 }
