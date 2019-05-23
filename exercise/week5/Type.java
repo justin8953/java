@@ -1,4 +1,4 @@
-
+// Define constants for different data type
 enum Type {
-   INT, STR, FORIEGN
+   INT, STR, FLOAT
 };

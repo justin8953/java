@@ -1,0 +1,58 @@
+{
+   "configurations": [
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - Integrate",
+         "request": "launch",
+         "mainClass": "Integrate"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - SelectMenu",
+         "request": "launch",
+         "mainClass": "SelectMenu"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - GameStarts",
+         "request": "launch",
+         "mainClass": "GameStarts"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - GameStart",
+         "request": "launch",
+         "mainClass": "GameStart"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - SwingLayoutDemo",
+         "request": "launch",
+         "mainClass": "SwingLayoutDemo"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - CreateMenu",
+         "request": "launch",
+         "mainClass": "CreateMenu"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - GameMenu",
+         "request": "launch",
+         "mainClass": "GameMenu"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - Menu",
+         "request": "launch",
+         "mainClass": "Menu"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - Interface",
+         "request": "launch",
+         "mainClass": "Interface"
+      }
+   ]
+}

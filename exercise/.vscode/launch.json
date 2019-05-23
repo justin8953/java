@@ -1,0 +1,28 @@
+{
+   "configurations": [
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - SelectMenu",
+         "request": "launch",
+         "mainClass": "SelectMenu"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - QuestionList",
+         "request": "launch",
+         "mainClass": "QuestionList"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - Question",
+         "request": "launch",
+         "mainClass": "Question"
+      },
+      {
+         "type": "java",
+         "name": "CodeLens (Launch) - Interface",
+         "request": "launch",
+         "mainClass": "Interface"
+      }
+   ]
+}

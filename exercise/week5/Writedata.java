@@ -3,7 +3,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+// Write into File
 class Writedata{
+   
+   //  Write single string
    void write(String str, String filename){
       try {
          
@@ -15,22 +18,27 @@ class Writedata{
          System.out.println("Cant not create file");
       }
    }
+   /* 
+   Write table with field and attrs by the format of name(type),name(type),name(type)
+   and data, data, data
+   */
    void writeTable(String filename,ArrayList<Record> field ,ArrayList<Record> attrs){
       try {
          BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
          for (Record line: field){
             for (int i=0; i<line.Record_size(); i++)
             {
-               String str = line.getRecords().get(i);
-               if (i==line.Record_size()-1){writer.write(str);}
-               else{writer.write(str+", ");}
+               String str = line.getIndexofRecord(i);
+               Type type = line.getIndexofRecordType(i);
+               if (i==line.Record_size()-1){writer.write(str+"("+type.toString()+")");}
+               else{writer.write(str+"("+type.toString()+")"+", ");}
             }
             writer.write("\n");
          }
          for (Record line: attrs){
             for (int i=0; i<line.Record_size(); i++)
             {
-               String str = line.getRecords().get(i);
+               String str = line.getIndexofRecord(i);
                if (i==line.Record_size()-1){writer.write(str);}
                else{writer.write(str+", ");}
             }
@@ -56,10 +64,14 @@ class Writedata{
    private void arrayWritingTest(){
       ArrayList<Record> attrs = new ArrayList<Record>();
       ArrayList<Record> field = new ArrayList<Record>();
-      Record datast = new Record(new String[]{"id","name","address"});
-      Record datand = new Record(new String[]{"1","justin","taipei"});
-      field.add(datast);
-      attrs.add(datand);
+      DataType data1 = new DataType("id", Type.INT);
+      DataType data2 = new DataType("name", Type.STR);
+      DataType data3 = new DataType("score", Type.FLOAT);
+      DataType datand1 = new DataType("1", Type.INT);
+      DataType datand2 = new DataType("justin", Type.STR);
+      DataType datand3 = new DataType("1.0", Type.FLOAT);
+      field.add(new Record(new DataType[] {data1,data2,data3}));
+      attrs.add(new Record(new DataType[] {datand1,datand2,datand3}));
       writeTable("Table.txt",field,attrs);
    }
 
