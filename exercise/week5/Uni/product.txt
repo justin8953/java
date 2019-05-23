@@ -1,0 +1,2 @@
+id(INT), product(STR), price(FLOAT)
+1, pen, 1.0

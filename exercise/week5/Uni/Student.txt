@@ -1,0 +1,2 @@
+id(INT), name(STR), address(FLOAT)
+1, justin, 1.0
